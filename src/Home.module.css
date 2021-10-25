@@ -1,0 +1,65 @@
+.img1{
+    width:  220px;
+    height: 160px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-left: 240px;
+    margin-top: 25px;
+}
+
+.img2{
+   width:  220px;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+ 	border: 2px solid black;
+ 	border-radius: 10px;
+}
+
+.img3{
+     width:  220px;
+    height: 160px;
+    object-fit: cover;
+    float: right;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-right: 240px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 625px) {
+  	.img1{
+    width:  220px;
+    height: 160px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.img2{
+   width:  220px;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+ 	border: 2px solid black;
+ 	border-radius: 10px;
+}
+
+.img3{
+     width:  220px;
+    height: 160px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    margin-right: 110px;
+}
+}

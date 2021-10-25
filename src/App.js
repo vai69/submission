@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState,useEffect} from 'react';
+import styles from './Home.module.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [image1,setImage1]=useState('');
+  const [image2,setImage2]=useState('');
+  const [image3,setImage3]=useState('');
 
+  useEffect(()=>{
+    Promise.all([
+      fetch('https://dog.ceo/api/breeds/image/random'),
+      fetch('https://dog.ceo/api/breeds/image/random'),
+      fetch('https://dog.ceo/api/breeds/image/random')
+
+    ]).then(function (responses) {
+        return Promise.all(responses.map(function (response) {
+          return response.json();
+        }));
+    }).then(function (data) {
+        //console.log(data);
+
+        setImage1(data[0].message);
+        setImage2(data[1].message);
+        setImage3(data[2].message);
+        console.log(data[1]);
+
+
+    }).catch(function (error) {
+
+        console.log(error);
+
+    });
+  },[]);
+    return(
+          <div>
+            <img className={styles.img1} src={image1} alt="dog"/><br/>
+            <img className={styles.img2} src={image2} alt="dog"/><br/>
+            <img className={styles.img3} src={image3} alt="dog"/>
+          </div>
+        );
+}
+ 
 export default App;
